@@ -11,12 +11,9 @@
 
   <p>
     <strong>Completed:</strong>
-    <%= task.completed %>
-  </p>
-
-  <p>
-    <strong>User:</strong>
-    <%= task.user_id %>
+    <%= simple_form_for(task, remote: true) do |f| %>
+      <%= f.input :completed, as: :boolean, label: false %>
+    <% end %>
   </p>
 
 </div>
