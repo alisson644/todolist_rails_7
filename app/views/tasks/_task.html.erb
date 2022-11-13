@@ -1,19 +1,10 @@
 <div id="<%= dom_id task %>">
-  <p>
-    <strong>Title:</strong>
-    <%= task.title %>
-  </p>
-
-  <p>
-    <strong>Body:</strong>
-    <%= task.body %>
-  </p>
-
-  <p>
-    <strong>Completed:</strong>
-    <%= simple_form_for(task, remote: true) do |f| %>
-      <%= f.input :completed, as: :boolean, label: false %>
+  <div class="card p-5">
+    <h5 class="card-title"><%= task.title %></h5>
+    <p class="card-text"><%= task.body %></p>
+    <%= simple_form_for(task) do |f| %>
+      <%= f.input :completed, as: :boolean, label: "completed?" %>
+      <%= f.submit "Update", class: "btn btn-primary" %>
     <% end %>
-  </p>
-
+  </div>
 </div>
