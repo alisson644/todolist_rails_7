@@ -1,0 +1,44 @@
+<section class="vh-100" style="background-color: #508bfc;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+        <div class="card shadow-2-strong" style="border-radius: 1rem;">
+          <div class="card-body p-5 text-center">
+
+            <h3 class="mb-5">Sign in</h3>
+            <%= simple_form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+              <%= f.error_notification %>
+              <div class="form-outline mb-4">
+              <%= f.input :email,
+                              required: false,
+                              autofocus: true,
+                              class: "form-control form-control-lg",
+                              input_html: { autocomplete: "email" } %>
+              </div>
+              <div class="form-outline mb-4">
+                <%= f.input :password,
+                              required: false,
+                              hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                              class: "form-control form-control-lg",
+                              input_html: { autocomplete: "new-password" } %>
+              </div>
+              <div class="form-outline mb-4">
+                <%= f.input :password_confirmation,
+                              required: false,
+                              class: "form-control form-control-lg",
+                              input_html: { autocomplete: "new-password" } %>
+              </div>
+              <div class="d-grid gap-2">
+                <%= f.button :submit, "Sign up", class:"btn btn-primary btn-lg" %>
+              </div>
+            <% end %>
+
+            <hr class="my-4">
+            <%= render "devise/shared/links" %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
