@@ -1,10 +1,10 @@
-<div id="<%= dom_id task %>">
-  <div class="card p-5">
-    <h5 class="card-title"><%= task.title %></h5>
-    <p class="card-text"><%= task.body %></p>
+ <li class="list-group-item d-flex justify-content-between align-items-start" id="<%= dom_id task %>">
+    <div class="ms-2 me-auto">
+      <div class="fw-bold"><%= task.title %></div>
+      <%= task.body %>
+    </div>
     <%= simple_form_for(task) do |f| %>
       <%= f.input :completed, as: :boolean, label: "completed?" %>
       <%= f.submit "Update", class: "btn btn-primary" %>
     <% end %>
-  </div>
-</div>
+  </li>
